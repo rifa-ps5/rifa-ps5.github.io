@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rifa do New Nintendo 3DS · R$20 por número</title>
+<meta name="description" content="Concorra a um New Nintendo 3DS japonês completo + uma arte à sua escolha. R$20 por número, 160 números.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thiagosouza3571-rgb.github.io/rifa-new3ds/">
+<meta property="og:title" content="Rifa do New Nintendo 3DS · R$20 por número">
+<meta property="og:description" content="New 3DS japonês completo + uma arte à sua escolha. 160 números. Escolha o seu!">
+<meta property="og:image" content="https://thiagosouza3571-rgb.github.io/rifa-new3ds/preview.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0d0f14">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0f14;--card:#171a22;--line:#2a2f3c;--red:#e22330;--blue:#1e5adc;--green:#169a4a;--yellow:#ffcc1f;--muted:#a3a9b8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:#fff;line-height:1.45}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.display{font-family:Anton,Impact,sans-serif;letter-spacing:.5px;font-weight:400}
+/* hero */
+.hero{background:radial-gradient(circle at 90% 0,rgba(226,35,48,.35),transparent 45%),radial-gradient(circle at 0 100%,rgba(30,90,220,.3),transparent 45%);padding:40px 0 48px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center}
+.tag{display:inline-block;background:var(--red);border-radius:99px;padding:6px 16px;font-weight:800;letter-spacing:2px;font-size:13px}
+h1{font-size:clamp(64px,11vw,120px);line-height:.95;margin:10px 0 8px}
+.lead{font-size:20px;font-weight:600}.lead b{color:var(--yellow)}
+.stats{display:flex;gap:12px;margin:22px 0;flex-wrap:wrap}
+.stat{border-radius:18px;padding:12px 18px;min-width:130px}
+.stat strong{display:block;font-family:Anton,Impact,sans-serif;font-size:38px;font-weight:400;line-height:1.05}
+.stat span{font-size:13px;font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:10px;background:#229ED9;color:#fff;text-decoration:none;font-weight:800;padding:14px 22px;border-radius:14px;border:0;font-size:16px;cursor:pointer}
+.btn:hover{filter:brightness(1.1)}
+.btn.alt{background:var(--yellow);color:#111}
+.photo{border-radius:26px;overflow:hidden;border:5px solid #fff;transform:rotate(-2deg);box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.photo img{display:block;width:100%}
+.inc{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:6px 16px;font-size:14px;color:#dfe3ea}
+.inc li{list-style:none}.inc li:before{content:"✓ ";color:#3fd17a;font-weight:800}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:38px;margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:22px}
+/* how */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.step .n{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:800;margin-bottom:10px}
+.pix{margin-top:18px;background:var(--card);border:1px dashed var(--yellow);border-radius:16px;padding:16px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.pix code{font-size:18px;font-weight:800;color:var(--yellow);word-break:break-all}
+.copy{background:#2a2f3c;color:#fff;border:0;border-radius:10px;padding:8px 14px;font-weight:700;cursor:pointer}
+/* grid */
+.legend{display:flex;gap:16px;font-size:14px;color:var(--muted);margin-bottom:14px;flex-wrap:wrap}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:6px}
+.nums{display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:6px}
+.num{aspect-ratio:1;border-radius:10px;border:1px solid var(--line);background:var(--card);color:#fff;font-weight:800;font-size:15px;cursor:pointer}
+.num:hover:not(:disabled){border-color:var(--yellow)}
+.num.sel{background:var(--yellow);color:#111;border-color:var(--yellow)}
+.num:disabled{background:#2a1013;color:#6b3a3f;border-color:#3b1a1e;cursor:not-allowed;text-decoration:line-through}
+.counter{margin-top:12px;font-weight:700;color:var(--muted)}
+/* artists */
+.artist{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;margin-bottom:22px}
+.ahead{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.ahead h3{font-size:30px}
+.tg{color:#5cc3f5;font-weight:700;text-decoration:none}.links{display:flex;gap:14px;align-items:center;flex-wrap:wrap}.canal{background:#229ED9;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:8px 14px;border-radius:10px}.canal:hover{filter:brightness(1.1)}
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.art{border-radius:16px;overflow:hidden;background:#0f1218;border:1px solid var(--line)}
+.art .img{aspect-ratio:1;display:grid;place-items:center;font-weight:800;color:rgba(255,255,255,.75);font-size:15px;text-align:center;padding:10px}
+.art .img{position:relative}.art .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}.art{transition:transform .15s}.art:hover{transform:translateY(-3px)}
+.art p{padding:8px 12px;font-size:14px;font-weight:600}
+/* reserve box */
+.reserve{margin-top:18px;background:#10131a;border:1px solid var(--line);border-radius:18px;padding:18px}
+.reserve h4{font-size:18px;margin-bottom:4px}
+.reserve .hint{color:var(--muted);font-size:14px;margin-bottom:12px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+label{font-size:13px;font-weight:700;color:var(--muted);display:block;margin-bottom:4px}
+input,textarea{width:100%;background:#0b0d12;border:1px solid var(--line);border-radius:10px;color:#fff;padding:11px 12px;font:inherit;font-size:15px}
+input:focus,textarea:focus{outline:2px solid var(--yellow);border-color:transparent}
+.picked{font-size:14px;margin-bottom:12px;color:#dfe3ea}
+.picked b{color:var(--yellow)}
+.msg{font-size:13px;color:var(--muted);margin-top:10px}
+.err{color:#ff7a84}
+footer{padding:30px 0 50px;color:var(--muted);font-size:13px;text-align:center;border-top:1px solid var(--line)}
+@media(max-width:760px){.hero .wrap{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}.inc{grid-template-columns:1fr}}
+</style></head><body>
+
+<header class="hero"><div class="wrap">
+ <div>
+  <span class="tag">SORTEIO</span>
+  <h1 class="display">RIFA DO<br>NEW 3DS</h1>
+  <p class="lead">Concorra a um <b>New Nintendo 3DS japonês preto</b> e ganhe também <b>uma arte de um dos artistas participantes, à sua escolha</b>.</p>
+  <div class="stats">
+   <div class="stat" style="background:var(--yellow);color:#111"><strong>R$20</strong><span>POR NÚMERO</span></div>
+   <div class="stat" style="background:var(--blue)"><strong id="livres">160</strong><span>NÚMEROS LIVRES</span></div>
+   <div class="stat" style="background:var(--green)"><strong>+ ARTE</strong><span>BÔNUS PRO GANHADOR</span></div>
+  </div>
+  <a class="btn" id="grupoBtn" href="#" target="_blank" rel="noopener">✈️ Entrar no canal da rifa no Telegram</a>
+ </div>
+ <div>
+  <div class="photo"><img alt="New Nintendo 3DS preto" src="img/3ds.jpg"></div>
+  <ul class="inc">
+   <li>Modelo compacto, faceplates trocáveis</li><li>Caixa original, serial batendo</li>
+   <li>Todos os manuais e AR Cards</li><li>Carregador</li>
+   <li>Desbloqueado, pronto pra baixar jogos</li><li>Cartão de 64GB</li>
+   <li>Película nas duas telas</li>
+  </ul>
+ </div>
+</div></header>
+
+<section><div class="wrap">
+ <h2 class="display">COMO PARTICIPAR</h2>
+ <p class="sub">Leva menos de dois minutos.</p>
+ <div class="steps">
+  <div class="step"><div class="n" style="background:var(--blue)">1</div>Escolha seus números na tabela abaixo.</div>
+  <div class="step"><div class="n" style="background:var(--red)">2</div>Faça o Pix de R$20 por número.</div>
+  <div class="step"><div class="n" style="background:var(--green)">3</div>Embaixo do catálogo do artista que te trouxe, coloque seu @ do Telegram e toque em enviar.</div>
+  <div class="step"><div class="n" style="background:#c99700">4</div>Anexe o comprovante na conversa do Telegram que vai abrir. Pronto!</div>
+ </div>
+ <div class="pix"><span>Chave Pix:</span> <code id="pixKey"></code> <button class="copy" id="copyPix">Copiar</button></div>
+</div></section>
+
+<section id="numeros"><div class="wrap">
+ <h2 class="display">ESCOLHA SEUS NÚMEROS</h2>
+ <p class="sub">Toque para selecionar. Os riscados já foram vendidos.</p>
+ <div class="legend"><span><i style="background:var(--card);border:1px solid var(--line)"></i>Livre</span><span><i style="background:var(--yellow)"></i>Selecionado</span><span><i style="background:#2a1013"></i>Vendido</span></div>
+ <div class="nums" id="nums"></div>
+ <p class="counter" id="counter">Nenhum número selecionado.</p>
+</div></section>
+
+<section id="artistas"><div class="wrap">
+ <h2 class="display">ARTISTAS PARTICIPANTES</h2>
+ <p class="sub">Conheça os trabalhos. Se você ganhar, escolhe de qual artista quer a sua arte.</p>
+ <div id="lista"></div>
+</div></section>
+
+<div id="lb" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;align-items:center;justify-content:center;padding:20px;cursor:zoom-out"><img id="lbImg" alt="" style="max-width:100%;max-height:100%;border-radius:12px"></div>
+<footer>Rifa do New Nintendo 3DS · 160 números · R$20 cada · Resultado divulgado no canal do Telegram</footer>
+
+<script>
+/* ======== EDITE AQUI ======== */
+const CONFIG = {
+  grupoTelegram: "https://t.me/+b2Xrc73HWuBkZTc5",   // link do grupo da rifa
+  organizador: "KlarkOwO",                 // seu @ do Telegram (sem o @), recebe os comprovantes
+  pix: "40130a17-de3a-4ed2-8b50-9bb9d5aafe66",
+  vendidos: [13, 28, 47],                               // ex.: [3, 17, 42]
+  artistas: [
+    { nome: "Blade", telegram: "Howler_Blade", canal: "https://t.me/HowlerArts", artes: [{img:"img/blade0.jpg"},{img:"img/blade1.jpg"},{img:"img/blade2.jpg"},{img:"img/blade3.jpg"},{img:"img/blade4.jpg"},{img:"img/blade5.jpg"},{img:"img/blade6.jpg"},{img:"img/blade7.jpg"},{img:"img/blade8.jpg"}] },
+    { nome: "Mikas", telegram: "MikasFRR", canal: "https://t.me/mikasgallery", artes: [{img:"img/mikas0.jpg"},{img:"img/mikas1.jpg"},{img:"img/mikas2.jpg"},{img:"img/mikas3.jpg"},{img:"img/mikas4.jpg"}] },
+    { nome: "Lui", telegram: "LuiTheCatArt", canal: "https://t.me/LUI2arts", artes: [{img:"img/lui0.jpg"},{img:"img/lui1.jpg"},{img:"img/lui2.jpg"},{img:"img/lui3.jpg"},{img:"img/lui4.jpg"},{img:"img/lui5.jpg"}] },
+    { nome: "Math", telegram: "Maath77", artes: [{img:"img/math0.jpg"},{img:"img/math1.jpg"},{img:"img/math2.jpg"},{img:"img/math3.jpg"},{img:"img/math4.jpg"},{img:"img/math5.jpg"}] },
+    { nome: "Ilumini", telegram: "Ilumimarin", canal: "https://t.me/ilumiarts", artes: [{img:"img/ilu0.jpg"},{img:"img/ilu1.jpg"},{img:"img/ilu2.jpg"},{img:"img/ilu3.jpg"},{img:"img/ilu4.jpg"},{img:"img/ilu5.jpg"}] }
+  ]
+};
+/* ============================ */
+
+const TOTAL = 160, PRECO = 20;
+const vendidos = new Set(CONFIG.vendidos);
+const sel = new Set();
+const cores = ["#e22330","#1e5adc","#169a4a","#c99700","#7a3fd1","#d1477a"];
+
+document.getElementById("grupoBtn").href = CONFIG.grupoTelegram;
+document.getElementById("pixKey").textContent = CONFIG.pix;
+document.getElementById("livres").textContent = TOTAL - vendidos.size;
+document.getElementById("copyPix").onclick = async e => {
+  try { await navigator.clipboard.writeText(CONFIG.pix); e.target.textContent = "Copiado!"; }
+  catch { e.target.textContent = "Copie manualmente"; }
+  setTimeout(() => e.target.textContent = "Copiar", 2000);
+};
+
+const numsEl = document.getElementById("nums");
+for (let i = 1; i <= TOTAL; i++) {
+  const b = document.createElement("button");
+  b.className = "num"; b.textContent = String(i).padStart(3, "0");
+  if (vendidos.has(i)) { b.disabled = true; b.title = "Vendido"; }
+  b.onclick = () => { sel.has(i) ? sel.delete(i) : sel.add(i); b.classList.toggle("sel"); atualiza(); };
+  numsEl.appendChild(b);
+}
+const fmt = () => [...sel].sort((a,b)=>a-b).map(n=>String(n).padStart(3,"0")).join(", ");
+function atualiza() {
+  const txt = sel.size ? `Selecionados: ${fmt()} · Total: R$${sel.size*PRECO}` : "Nenhum número selecionado.";
+  document.getElementById("counter").textContent = txt;
+  document.querySelectorAll(".picked").forEach(p => {
+    p.innerHTML = sel.size ? `Números: <b>${fmt()}</b> · Total <b>R$${sel.size*PRECO}</b>`
+      : `Nenhum número escolhido ainda. <a href="#numeros">Escolha na tabela</a>.`;
+  });
+}
+
+const lb = document.getElementById("lb"), lbImg = document.getElementById("lbImg");
+lb.onclick = () => lb.style.display = "none";
+const lista = document.getElementById("lista");
+CONFIG.artistas.forEach((a, idx) => {
+  const el = document.createElement("div"); el.className = "artist";
+  const cor = cores[idx % cores.length];
+  el.innerHTML = `
+    <div class="ahead"><h3 class="display"></h3><div class="links"><a class="tg" target="_blank" rel="noopener"></a><a class="canal" target="_blank" rel="noopener" style="display:none">🖼️ Canal de artes</a></div></div>
+    <div class="gallery"></div>
+    <form class="reserve">
+      <h4>Comprou por indicação deste artista?</h4>
+      <p class="hint">Coloque seu @ e toque em enviar. O Telegram abre com a mensagem pronta; é só anexar o comprovante do Pix.</p>
+      <p class="picked"></p>
+      <div style="margin-bottom:10px"><label>Seu @ do Telegram</label><input name="contato" required placeholder="@usuario" autocapitalize="off" autocomplete="off"></div>
+      <label>Recado (opcional)</label><textarea name="obs" rows="2" placeholder="Algum comentário?"></textarea>
+      <div style="margin-top:12px"><button class="btn alt" type="submit">📎 Enviar comprovante no Telegram</button></div>
+      <p class="msg"></p>
+    </form>`;
+  el.querySelector("h3").textContent = a.nome;
+  const tg = el.querySelector(".tg"); tg.textContent = "@" + a.telegram; tg.href = "https://t.me/" + a.telegram;
+  if (a.canal) { const c = el.querySelector(".canal"); c.href = a.canal; c.style.display = ""; }
+  const gal = el.querySelector(".gallery");
+  a.artes.forEach((arte, j) => {
+    const item = typeof arte === "string" ? { titulo: arte } : arte;
+    const d = document.createElement("div"); d.className = "art";
+    const box = document.createElement("div"); box.className = "img";
+    if (item.img) { box.style.padding = "0"; const im = document.createElement("img"); im.src = item.img; im.alt = item.titulo; im.loading = "lazy"; box.appendChild(im); }
+    else { box.style.background = `linear-gradient(135deg, ${cor}, #10131a)`; box.textContent = "Imagem da arte"; }
+    d.appendChild(box);
+    if (item.titulo) { const p = document.createElement("p"); p.textContent = item.titulo; d.appendChild(p); }
+    if (item.img) { d.style.cursor = "zoom-in"; d.onclick = () => { lbImg.src = item.img; lb.style.display = "flex"; }; }
+    gal.appendChild(d);
+  });
+  const form = el.querySelector("form"), msg = el.querySelector(".msg");
+  form.onsubmit = ev => {
+    ev.preventDefault();
+    if (!sel.size) { msg.className = "msg err"; msg.innerHTML = 'Escolha pelo menos um número na <a href="#numeros">tabela</a>.'; return; }
+    const f = new FormData(form);
+    const texto = `Olá! Quero participar da rifa do New 3DS.
+Meu Telegram: @${String(f.get("contato")).trim().replace(/^@+/, "")}
+Números: ${fmt()}
+Total: R$${sel.size*PRECO}
+Indicação: ${a.nome} (@${a.telegram})
+${f.get("obs") ? "Recado: " + f.get("obs") + "\n" : ""}Segue o comprovante do Pix 👇`;
+    const url = `https://t.me/${CONFIG.organizador}?text=${encodeURIComponent(texto)}`;
+    msg.className = "msg";
+    msg.innerHTML = `Se o Telegram não abriu, <a target="_blank" rel="noopener">toque aqui</a> ou mande para @${CONFIG.organizador}. Seus números só ficam garantidos depois que o comprovante for confirmado.`;
+    msg.querySelector("a").href = url;
+    const a2 = document.createElement("a"); a2.href = url; a2.target = "_blank"; a2.rel = "noopener"; a2.click();
+  };
+  lista.appendChild(el);
+});
+atualiza();
+</script>
+</body></html>
