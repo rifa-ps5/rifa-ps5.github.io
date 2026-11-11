@@ -150,7 +150,8 @@ const CONFIG = {
     { nome: "Lui", telegram: "LuiTheCatArt", canal: "https://t.me/LUI2arts", artes: [{img:"img/lui0.jpg"},{img:"img/lui1.jpg"},{img:"img/lui2.jpg"},{img:"img/lui3.jpg"},{img:"img/lui4.jpg"},{img:"img/lui5.jpg"}] },
     { nome: "Math", telegram: "Maath77", artes: [{img:"img/math0.jpg"},{img:"img/math1.jpg"},{img:"img/math2.jpg"},{img:"img/math3.jpg"},{img:"img/math4.jpg"},{img:"img/math5.jpg"}] },
     { nome: "Ilumini", telegram: "Ilumimarin", canal: "https://t.me/ilumiarts", artes: [{img:"img/ilu0.jpg"},{img:"img/ilu1.jpg"},{img:"img/ilu2.jpg"},{img:"img/ilu3.jpg"},{img:"img/ilu4.jpg"},{img:"img/ilu5.jpg"}] },
-    { nome: "Apollo", telegram: "Star_Apollo", canal: "https://t.me/apollosgallery", artes: [{img:"img/apollo0.jpg"},{img:"img/apollo1.jpg"},{img:"img/apollo2.jpg"},{img:"img/apollo3.jpg"},{img:"img/apollo4.jpg"},{img:"img/apollo5.jpg"},{img:"img/apollo6.jpg"},{img:"img/apollo7.jpg"},{img:"img/apollo8.jpg"},{img:"img/apollo9.jpg"},{img:"img/apollo10.jpg"}] }
+    { nome: "Apollo", telegram: "Star_Apollo", canal: "https://t.me/apollosgallery", artes: [{img:"img/apollo0.jpg"},{img:"img/apollo1.jpg"},{img:"img/apollo2.jpg"},{img:"img/apollo3.jpg"},{img:"img/apollo4.jpg"},{img:"img/apollo5.jpg"},{img:"img/apollo6.jpg"},{img:"img/apollo7.jpg"},{img:"img/apollo8.jpg"},{img:"img/apollo9.jpg"},{img:"img/apollo10.jpg"}] },
+    { nome: "Xeiróvisk", canal: "https://t.me/XeiroDraws", artes: [{img:"img/xeiro0.jpg"},{img:"img/xeiro1.jpg"},{img:"img/xeiro2.jpg"},{img:"img/xeiro3.jpg"},{img:"img/xeiro4.jpg"},{img:"img/xeiro5.jpg"},{img:"img/xeiro6.jpg"}] }
   ]
 };
 /* ============================ */
@@ -206,7 +207,7 @@ CONFIG.artistas.forEach((a, idx) => {
       <p class="msg"></p>
     </form>`;
   el.querySelector("h3").textContent = a.nome;
-  const tg = el.querySelector(".tg"); tg.textContent = "@" + a.telegram; tg.href = "https://t.me/" + a.telegram;
+  const tg = el.querySelector(".tg"); if (a.telegram) { tg.textContent = "@" + a.telegram; tg.href = "https://t.me/" + a.telegram; } else tg.remove();
   if (a.canal) { const c = el.querySelector(".canal"); c.href = a.canal; c.style.display = ""; }
   const gal = el.querySelector(".gallery");
   a.artes.forEach((arte, j) => {
@@ -229,7 +230,7 @@ CONFIG.artistas.forEach((a, idx) => {
 Meu Telegram: @${String(f.get("contato")).trim().replace(/^@+/, "")}
 Números: ${fmt()}
 Total: R$${sel.size*PRECO}
-Indicação: ${a.nome} (@${a.telegram})
+Indicação: ${a.nome}${a.telegram ? ` (@${a.telegram})` : ""}
 ${f.get("obs") ? "Recado: " + f.get("obs") + "\n" : ""}Segue o comprovante do Pix 👇`;
     const url = `https://t.me/${CONFIG.organizador}?text=${encodeURIComponent(texto)}`;
     msg.className = "msg";
