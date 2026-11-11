@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rifa do New Nintendo 3DS · R$20 por número</title>
-<meta name="description" content="Concorra a um New Nintendo 3DS japonês completo + uma arte à sua escolha. R$20 por número, 160 números.">
+<title>Rifa do PS5 · R$20 por número</title>
+<meta name="description" content="Concorra a um PS5 Slim Edição Digital + uma arte à sua escolha. R$20 por número. Sorteio 30/11 às 20h.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://rifanew3ds.github.io/rifa-new3ds/">
-<meta property="og:title" content="Rifa do New Nintendo 3DS · R$20 por número">
-<meta property="og:description" content="New 3DS japonês completo + uma arte à sua escolha. 160 números. Escolha o seu!">
-<meta property="og:image" content="https://rifanew3ds.github.io/rifa-new3ds/preview.jpg">
+<meta property="og:title" content="Rifa do PS5 · R$20 por número">
+<meta property="og:description" content="PS5 Slim Edição Digital + uma arte à sua escolha. Sorteio 30/11 às 20h. Escolha o seu número!">
+<meta property="og:image" content="https://rifanew3ds.github.io/rifa-new3ds/preview.jpg?v=ps5">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
@@ -87,8 +87,8 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:13px;text-align:center;b
 <header class="hero"><div class="wrap">
  <div>
   <span class="tag">SORTEIO</span>
-  <h1 class="display">RIFA DO<br>NEW 3DS</h1>
-  <p class="lead">Concorra a um <b>New Nintendo 3DS japonês preto</b> e ganhe também <b>uma arte de um dos artistas participantes, à sua escolha</b>.</p>
+  <h1 class="display">RIFA DO<br>PS5</h1>
+  <p class="lead">Concorra a um <b>PS5 Slim Edição Digital com controle DualSense</b> e ganhe também <b>uma arte de um dos artistas participantes, à sua escolha</b>.</p>
   <div class="stats">
    <div class="stat" style="background:var(--yellow);color:#111"><strong>R$20</strong><span>POR NÚMERO</span></div>
    <div class="stat" style="background:var(--blue)"><strong id="livres">160</strong><span>NÚMEROS LIVRES</span></div>
@@ -98,7 +98,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:13px;text-align:center;b
   <a class="btn" id="grupoBtn" href="#" target="_blank" rel="noopener">✈️ Entrar no canal da rifa no Telegram</a>
  </div>
  <div>
-  <div class="photo"><img alt="New Nintendo 3DS preto" src="img/3ds.jpg"></div>
+  <div class="photo"><img alt="PS5 Slim Edição Digital na caixa" src="img/ps5.jpg"></div>
   <ul class="inc">
    <li>Modelo compacto, faceplates trocáveis</li><li>Caixa original, serial batendo</li>
    <li>Todos os manuais e AR Cards</li><li>Carregador</li>
@@ -135,7 +135,7 @@ footer{padding:30px 0 50px;color:var(--muted);font-size:13px;text-align:center;b
 </div></section>
 
 <div id="lb" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:50;align-items:center;justify-content:center;padding:20px;cursor:zoom-out"><img id="lbImg" alt="" style="max-width:100%;max-height:100%;border-radius:12px"></div>
-<footer>Rifa do New Nintendo 3DS · 160 números · R$20 cada · Resultado divulgado no canal do Telegram</footer>
+<footer>Rifa do PS5 · 160 números · R$20 cada · Resultado divulgado no canal do Telegram</footer>
 
 <script>
 /* ======== EDITE AQUI ======== */
@@ -226,7 +226,7 @@ CONFIG.artistas.forEach((a, idx) => {
     ev.preventDefault();
     if (!sel.size) { msg.className = "msg err"; msg.innerHTML = 'Escolha pelo menos um número na <a href="#numeros">tabela</a>.'; return; }
     const f = new FormData(form);
-    const texto = `Olá! Quero participar da rifa do New 3DS.
+    const texto = `Olá! Quero participar da rifa do PS5.
 Meu Telegram: @${String(f.get("contato")).trim().replace(/^@+/, "")}
 Números: ${fmt()}
 Total: R$${sel.size*PRECO}
